@@ -36,6 +36,7 @@ def getSpacePosition(ciphertexts):
     return Hash
     # print(Hash)
 def getPosition(spacePosition):
+    ###在所有的候選人中，挑選第一個候選人做事情
     key_len = getkey_length(ciphertexts)
     position=[0]*key_len
     for p in range(key_len):
