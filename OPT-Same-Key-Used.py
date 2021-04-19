@@ -1,17 +1,3 @@
-'''
-###觀察：
-space的ASCII是00100000
-A～Z的ASCII碼二進制形式爲01000001～01011010
-a～z的ASCII碼二進制形式爲01100001～01111010
-###推論：
-1.如果將space和字母做XOR相當於對字母做大小寫的變換，但兩個字母做XOR則會超過字母的範圍.
-2.space XOR space = space
-3.根據上課所知，c1 XOR c2 = m1 XOR Key XOR m2 XOR Key = m1 XOR m2，所以如果對兩個密文做XOR時，
-    相當於對兩個明文做XOR，在某情況下出現字母，代表m1和m2中有一個在該位置是"space".
-###作法：
-對這10個密文兩兩做XOR，找出明文中"space"的位置，再將對應於該位置上的密文和space做XOR，
-就可以得到該位置的Key，獲得足夠的key資訊，就能對密文做解密
-'''
 def getkey_length(ciphertexts):
     maxx = 0
     for c in range(len(ciphertexts)):
